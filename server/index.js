@@ -30,6 +30,8 @@ app.post('/code',async (req,res)=>{
 		  "max_tokens": 2000,
 		}
 	);
+
+	console.log(response.data)
 	const data = response.data.choices[0].text
 
 	res.status(200).send({status:'ok',data})
