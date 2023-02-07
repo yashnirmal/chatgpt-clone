@@ -22,7 +22,7 @@ app.get('/',(req,res)=>{
 })
 
 
-app.post('/code',async (req,res)=>{
+app.post('/chat',async (req,res)=>{
 	const response = await openai.createCompletion(
 		{
 		  "model": "text-davinci-003",
@@ -31,7 +31,6 @@ app.post('/code',async (req,res)=>{
 		}
 	);
 
-	console.log(response.data)
 	const data = response.data.choices[0].text
 
 	res.status(200).send({status:'ok',data})
